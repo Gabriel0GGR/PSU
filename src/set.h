@@ -269,6 +269,8 @@ void set() //Menu SET
           else if(!(PIND&(1 << PIND1)))
           {
             display('0');
+            storage(i, 0);
+            a=0;
           }
           else if(!(PIND&(1 << PIND2)))
           {
