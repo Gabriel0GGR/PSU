@@ -1,5 +1,6 @@
 #pragma once
 unsigned int SetV1=0, SetV2=0, SetI1=0, SetI2=0;
+bool c=0;
 
 void storage(unsigned char a, char b)
 {
@@ -7,60 +8,90 @@ void storage(unsigned char a, char b)
     switch (a)
     {
         case 0:
-            SetV1=(SetV1%1000);
+            if(c==1)
+                SetV1=(SetV1%1000);
             SetV1+=b*1000;
         break;
         case 1:
-            SetV1=((SetV1/1000)*1000)+(SetV1%100);
+            if(c==1)
+                SetV1=((SetV1/1000)*1000)+(SetV1%100);
             SetV1+=b*100;
         break;
         case 2:
-            SetV1=((SetV1/100)*100)+(SetV1%10);
+            if(c==1)
+                SetV1=((SetV1/100)*100)+(SetV1%10);
             SetV1+=b*10;
         break;
         case 3:
-            SetV1=((SetV1/10)*10);
+            if(c==1)
+                SetV1=((SetV1/10)*10);
             SetV1+=b;
         break;
         case 4:
-            SetV2=(SetV2%1000);
+            if(c==1)
+                SetV2=(SetV2%1000);
             SetV2+=b*1000;
         break;
         case 5:
-            SetV2=((SetV2/1000)*1000)+(SetV2%100);
+            if(c==1)
+                SetV2=((SetV2/1000)*1000)+(SetV2%100);
             SetV2+=b*100;
         break;
         case 6:
-            SetV2=((SetV2/100)*100)+(SetV2%10);
+            if(c==1)
+                SetV2=((SetV2/100)*100)+(SetV2%10);
             SetV2+=b*10;
         break;
         case 7:
-            SetV2=((SetV2/10)*10);
+            if(c==1)
+                SetV2=((SetV2/10)*10);
             SetV2+=b;
         break;
         case 8:
+            if(c==1)
+                SetI1=(SetI1%1000);
             SetI1+=b*1000;
         break;
         case 9:
+            if(c==1)
+                SetI1=((SetI1/1000)*1000)+(SetI1%100);
             SetI1+=b*100;
         break;
         case 10:
+            if(c==1)
+                SetI1=((SetI1/100)*100)+(SetI1%10);
             SetI1+=b*10;
         break;
         case 11:
+            if(c==1)
+                SetI1=((SetI1/10)*10);
             SetI1+=b;
         break;
         case 12:
+            if(c==1)
+                SetI2=(SetI2%1000);
             SetI2+=b*1000;
         break;
         case 13:
+            if(c==1)
+                SetI2=((SetI2/1000)*1000)+(SetI2%100);
             SetI2+=b*100;
         break;
         case 14:
+            if(c==1)
+                SetI2=((SetI2/100)*100)+(SetI2%10);
             SetI2+=b*10;
         break;
         case 15:
+            if(c==1)
+                SetI2=((SetI2/10)*10);
             SetI2+=b;
+        break;
+        case 16:
+            SetV1=0;
+            SetV2=0;
+            SetI1=0;
+            SetI2=0;
         break;
         case 32:
             if(SetV1==0 & SetV2==0)
@@ -140,6 +171,12 @@ void storage(unsigned char a, char b)
             display(I2_1);
             display(I2_0);
             PORTD&=~(1 << PORTD5);
+        break;
+        case 63:
+            c=0;
+        break;
+        case 64:
+            c=1;
         break;
     }
 }

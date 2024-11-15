@@ -23,6 +23,7 @@
 
 void setup()
 {
+  Serial.begin(9600);
   DDRB = 0b111111; //(1 << DDB0) | (1 << DDB1) | (1 << DDB2) | (1 << DDB3) | (1 << DDB4) | (1 << DDB5); //Configura pinos de saída do PORTB
   DDRC = 0b000000; //(0 << DDC0) | (0 << DDC1) | (0 << DDC2) | (0 << DDC3) | (0 << DDC4) | (0 << DDC5); //Configura pinos de entrada do PORTC
   DDRD = 0b11110000; //(0 << DDD0) | (0 << DDD1) | (0 << DDD2) | (0 << DDD3) | (1 << DDD4) | (1 << DDD5) | (1 << DDD6) | (1 << DDD7); //Configura pinos de entrada e saída do PORTD

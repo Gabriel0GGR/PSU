@@ -94,6 +94,8 @@ void set() //Menu SET
   display(0x14);
   display(0x0F);
   PORTD|=(1 << PORTD5);
+  storage(16, 0);
+  storage(63, 0);
   loop:
   shift(3);
   shift(0);
@@ -282,8 +284,7 @@ void set() //Menu SET
               display(0x14);
               display(0x14);
               PORTD|=(1 << PORTD5);
-              i=8;
-              goto loop;
+              i=7;
             }
             else
             {
@@ -295,6 +296,7 @@ void set() //Menu SET
               PORTD|=(1 << PORTD5);
               i=-1;
             }
+            storage(64, 0);
           }
           wait3:
           delayMicroseconds(2000);
