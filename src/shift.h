@@ -1,5 +1,4 @@
 #pragma once
-#include <avr/io.h>
 
 void shift(int a) //Função do registrador de deslocamento
 {

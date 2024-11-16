@@ -1,7 +1,4 @@
 #pragma once
-#include <avr/io.h>
-#include <Arduino.h>
-#include <shift.h>
 
 void display(unsigned int a) //Função do display LCD
 {

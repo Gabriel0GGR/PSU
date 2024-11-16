@@ -1,7 +1,4 @@
 #pragma once
-#include <avr/io.h>
-#include <Arduino.h>
-#include <display.h>
 #include <show.h>
 #include <power.h>
 #include <storage.h>

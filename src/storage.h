@@ -1,8 +1,8 @@
 #pragma once
-unsigned int SetV1=0, SetV2=0, SetI1=0, SetI2=0;
+unsigned int SetV1=0, SetV2=0, SetI1=0, SetI2=0, I1=0, I2=0, V1_50V=0, V2_50V=0, V1_15V=0, V2_15V=0;
 bool c=0;
 
-void storage(unsigned char a, char b)
+void storage(unsigned char a, int b)
 {
     char V1_0, V1_1, V1_2, V1_3, V2_0, V2_1, V2_2, V2_3, I1_0, I1_1, I1_2, I1_3, I2_0, I2_1, I2_2, I2_3;
     switch (a)
@@ -172,6 +172,8 @@ void storage(unsigned char a, char b)
             display(I2_1);
             display(I2_0);
             PORTD&=~(1 << PORTD5);
+            delay(200000);
+            show();
         break;
         case 63:
             c=0;
@@ -179,5 +181,50 @@ void storage(unsigned char a, char b)
         case 64:
             c=1;
         break;
+        case 123:
+            I1=b;
+        break;
+        case 124:
+            I2=b;
+        break;
+        case 125:
+            V1_50V=b;
+        break;
+        case 126:
+            V2_50V=b;
+        break;
+        case 127:
+            V1_15V=b;
+        break;
+        case 128:
+            V2_15V=b;
+        break;
     }
+        Serial.print("\t ADMUX=");
+        Serial.flush();
+        Serial.print(ADMUX, DEC);
+        Serial.print("\t I1=");
+        Serial.flush();
+        Serial.print(I1, DEC);
+        /*+Serial.flush();
+        Serial.print("\t I2=");
+        Serial.flush();
+        Serial.print(I2, DEC);
+        Serial.flush();
+        Serial.print("\t V1_50=");
+        Serial.flush();
+        Serial.print(V1_50V, DEC);
+        Serial.flush();
+        Serial.print("\t V2_50=");
+        Serial.flush();
+        Serial.print(V2_50V, DEC);
+        Serial.flush();
+        Serial.print("\t V1_15=");
+        Serial.flush();
+        Serial.print(V1_15V, DEC);
+        Serial.flush();
+        Serial.print("\t V2_15=");
+        Serial.flush();
+        Serial.print(V1_15V, DEC);
+        Serial.flush();*/
 }

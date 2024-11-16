@@ -10,10 +10,10 @@
             "includePath": [
                 "/home/Gabriel/PSU/include",
                 "/home/Gabriel/PSU/src",
-                "/home/Gabriel/PSU/.pio/libdeps/uno/avr-debugger/avr8-stub",
                 "/home/Gabriel/.platformio/packages/framework-arduino-avr/cores/arduino",
                 "/home/Gabriel/.platformio/packages/framework-arduino-avr/variants/standard",
                 "/home/Gabriel/PSU/.pio/libdeps/uno/Unity/src",
+                "/home/Gabriel/PSU/.pio/libdeps/uno/avr-debugger/avr8-stub",
                 "/home/Gabriel/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                 "/home/Gabriel/.platformio/packages/framework-arduino-avr/libraries/HID/src",
                 "/home/Gabriel/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
@@ -26,10 +26,10 @@
                 "path": [
                     "/home/Gabriel/PSU/include",
                     "/home/Gabriel/PSU/src",
-                    "/home/Gabriel/PSU/.pio/libdeps/uno/avr-debugger/avr8-stub",
                     "/home/Gabriel/.platformio/packages/framework-arduino-avr/cores/arduino",
                     "/home/Gabriel/.platformio/packages/framework-arduino-avr/variants/standard",
                     "/home/Gabriel/PSU/.pio/libdeps/uno/Unity/src",
+                    "/home/Gabriel/PSU/.pio/libdeps/uno/avr-debugger/avr8-stub",
                     "/home/Gabriel/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                     "/home/Gabriel/.platformio/packages/framework-arduino-avr/libraries/HID/src",
                     "/home/Gabriel/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
