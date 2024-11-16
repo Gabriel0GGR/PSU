@@ -123,10 +123,11 @@ void storage(unsigned char a, char b)
             I2_1=((SetI2/10)%10)+48;
             I2_0=(SetI2%10)+48;
             PORTD&=~(1 << PORTD5);
-            display(0x08);
-            display(0x01);
-            delayMicroseconds(2000);
             display(0x0C);
+            display(0x80);
+            display(0x14);
+            display(0x14);
+            display(0x14);
             PORTD|=(1 << PORTD5);
             display(V1_3);
             display(V1_2);
