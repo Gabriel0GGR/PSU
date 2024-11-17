@@ -200,12 +200,12 @@ void storage(unsigned char a, int b)
             V2_15V=b;
         break;
     }
-        Serial.print("\t ADMUX=");
+        /*Serial.print("\t ADMUX=");
         Serial.flush();
         Serial.print(ADMUX, DEC);
         Serial.print("\t I1=");
         Serial.flush();
-        Serial.print(I1, DEC);
+        Serial.print(I1, DEC);*/
         /*+Serial.flush();
         Serial.print("\t I2=");
         Serial.flush();

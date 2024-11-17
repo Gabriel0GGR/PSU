@@ -37,9 +37,9 @@ void setup()
   PORTD |= (1 << PORTD0) | (1 << PORTD1) | (1 << PORTD2) | (1 << PORTD3); //Ativa pull up do PORTD
   PORTC = 0x00; //Desabilita pull up PORTC
   ADMUX = 0x00; //Habilita AREF e ajusta ADC à direita
-  ADCSRA = 0b10101111; //Configura interrupção e prescaler do ADC
+  ADCSRA = 0b10001111; //Configura interrupção e prescaler do ADC
   ADCSRB = 0x00; //Habilita conversão contínua no ADC
-  DIDR0 = 0b11000000; //Configura PORTC como entrada do ADC
+  DIDR0 = 0xFF; //Desativa o PORTC como entrada digital
   //Inicialização do display:
   delayMicroseconds(20000);
   shift(2);
@@ -145,6 +145,12 @@ ISR(ADC_vect)
     case 0:
       storage(123, ADC);
       ADMUX=1;
+        Serial.print("\t ADMUX=");
+        Serial.flush();
+        Serial.print(ADMUX, DEC);
+        Serial.print("\t I1=");
+        Serial.flush();
+        Serial.print(ADC, DEC);
     break;
     case 1:
       storage(124, ADC);
@@ -167,6 +173,7 @@ ISR(ADC_vect)
       ADMUX=0;
     break;
   }
+  ADCSRA |= (1 << ADSC);
 }
 
 void loop()
