@@ -30,7 +30,7 @@ void setup()
   EICRA = (1 << ISC11); //Configura as interrupções
   EIMSK = (1 << INT1); //Ativa as interrupções
   ICR1 = 0x0FFF; //Configura TOP para 12 bits
-  OCR0A = 0; //Zera registrador do Timer 1 do PWM 1
+  OCR1A = 0; //Zera registrador do Timer 1 do PWM 1
   OCR1B = 0; //Zera registrador do Timer 1 do PWM 2
   OCR2A = 0; //Zera registrador do Timer 2 do PWM 3
   TCCR1A = (1 << COM1A1) | (1 << COM1B1) | (1 << WGM11); //Configura PWMs e modo do Timer 1
