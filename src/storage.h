@@ -182,30 +182,30 @@ void storage(unsigned char a, int b)
             c=1;
         break;
         case 123:
-            I1=((b-270)*(3000/1024)+I1)/2;
+            I1=((b*2.9296)+I1)/2;
         break;
         case 124:
-            I2=b;
+            I2=((b*2.9296)+I1)/2;
         break;
         case 125:
-            V1_50V=b;
+            V1_50V=((b*2.9296)+I1)/2;
         break;
         case 126:
-            V2_50V=b;
+            V2_50V=((b*2.9296)+I1)/2;
         break;
         case 127:
-            V1_15V=b;
+            V1_15V=((b*2.9296)+I1)/2;
         break;
         case 128:
-            V2_15V=b;
+            V2_15V=((b*2.9296)+I1)/2;
         break;
     }
-        /*Serial.print("\t ADMUX=");
+        Serial.print("\t ADMUX=");
         Serial.flush();
         Serial.print(ADMUX, DEC);
         Serial.print("\t I1=");
         Serial.flush();
-        Serial.print(I1, DEC);*/
+        Serial.print(I1, DEC);
         /*+Serial.flush();
         Serial.print("\t I2=");
         Serial.flush();
