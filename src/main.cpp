@@ -30,10 +30,13 @@ void setup()
   EICRA = (1 << ISC11); //Configura as interrupções
   EIMSK = (1 << INT1); //Ativa as interrupções
   ICR1 = 0x0FFF; //Configura TOP para 12 bits
-  OCR1A = 0; //Zera registrador do timer do PWM 1
-  OCR1B = 0; //Zera registrador do timer do PWM 2
-  TCCR1A = (1 << COM1A1) | (1 << COM1B1) | (1 << WGM11); //Configura modo e prescaler do PWM 1
-  TCCR1B = (1 << WGM12) | (1 << WGM13) | (1 << CS10); //Configura modo e prescaler do PWM 2
+  OCR0A = 0; //Zera registrador do Timer 1 do PWM 1
+  OCR1B = 0; //Zera registrador do Timer 1 do PWM 2
+  OCR2A = 0; //Zera registrador do Timer 2 do PWM 3
+  TCCR1A = (1 << COM1A1) | (1 << COM1B1) | (1 << WGM11); //Configura PWMs e modo do Timer 1
+  TCCR1B = (1 << WGM13) | (1 << WGM12) | (1 << CS10); //Configura modo e prescaler do Timer 1
+  TCCR2A = (1 << COM2A1) | (1 << WGM21) | (1 << WGM20); //Configura PWMs e modo do Timer 2
+  TCCR2B = (1 << CS20); //Configura prescaler do Timer 2
   PORTD |= (1 << PORTD0) | (1 << PORTD1) | (1 << PORTD2) | (1 << PORTD3); //Ativa pull up do PORTD
   PORTC = 0x00; //Desabilita pull up PORTC
   ADMUX = 0x00; //Habilita AREF e ajusta ADC à direita
@@ -145,12 +148,12 @@ ISR(ADC_vect)
     case 0:
       storage(123, ADC);
       ADMUX=1;
-        Serial.print("\t ADMUX=");
+        /*Serial.print("\t ADMUX=");
         Serial.flush();
         Serial.print(ADMUX, DEC);
         Serial.print("\t I1=");
         Serial.flush();
-        Serial.print(ADC, DEC);
+        Serial.print(ADC, DEC);*/
     break;
     case 1:
       storage(124, ADC);
@@ -184,6 +187,7 @@ void loop()
   {
     OCR1A = i;
     OCR1B = i;
+    OCR2A = i/16;
     delayMicroseconds(1000);
     if(i==4095)
     {
@@ -191,6 +195,7 @@ void loop()
       {
         OCR1A = i;
         OCR1B = i;
+        OCR2A = i/16;
         delayMicroseconds(1000);
       }
     }

@@ -182,7 +182,7 @@ void storage(unsigned char a, int b)
             c=1;
         break;
         case 123:
-            I1=b;
+            I1=((b-270)*(3000/1024)+I1)/2;
         break;
         case 124:
             I2=b;
