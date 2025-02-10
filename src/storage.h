@@ -1,5 +1,6 @@
 #pragma once
-unsigned int SetV1=0, SetV2=0, SetI1=0, SetI2=0, I1=0, I2=0, V1_50V=0, V2_50V=0, V1_15V=0, V2_15V=0;
+extern unsigned int SetV1, SetV2, SetI1, SetI2, I1, I2, V1_50V, V2_50V, V1_15V, V2_15V;
+unsigned int m=0;
 bool c=0;
 
 void storage(unsigned char a, int b)
@@ -188,16 +189,80 @@ void storage(unsigned char a, int b)
             I2=((b*2.9293)+I1)/2;
         break;
         case 125:
-            V1_50V=((b*2.9293)+I1)/2;
+            switch (V1_50V)
+            {
+                case 0:
+                    V1_50V=b;
+                break;
+                default:
+                    switch (m)
+                    {
+                        case 0:
+                            V1_50V=(b+I1)/2;
+                        break;
+                        default:
+                            V1_50V=((b*m)+I1)/2;
+                        break;
+                    }
+                break;
+            }
         break;
         case 126:
-            V2_50V=((b*2.9293)+I1)/2;
+            switch (V2_50V)
+            {
+                case 0:
+                    V2_50V=b;
+                break;
+                default:
+                    switch (m)
+                    {
+                        case 0:
+                            V2_50V=(b+I1)/2;
+                        break;
+                        default:
+                            V2_50V=((b*m)+I1)/2;
+                        break;
+                    }
+                break;
+            }
         break;
         case 127:
-            V1_15V=((b*2.9293)+I1)/2;
+            switch (V1_15V)
+            {
+                case 0:
+                    V1_15V=b;
+                break;
+                default:
+                    switch (m)
+                    {
+                        case 0:
+                            V1_15V=(b+I1)/2;
+                        break;
+                        default:
+                            V1_15V=((b*m)+I1)/2;
+                        break;
+                    }
+                break;
+            }
         break;
         case 128:
-            V2_15V=((b*2.9293)+I1)/2;
+            switch (V2_15V)
+            {
+                case 0:
+                    V2_15V=b;
+                break;
+                default:
+                    switch (m)
+                    {
+                        case 0:
+                            V2_15V=(b+I1)/2;
+                        break;
+                        default:
+                            V2_15V=((b*m)+I1)/2;
+                        break;
+                    }
+                break;
+            }
         break;
     }
         Serial.print("\t ADMUX=");

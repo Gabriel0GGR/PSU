@@ -6,6 +6,7 @@
 #include <avr/interrupt.h>
 #include <Arduino.h>
 
+#include <start.h>
 #include <shift.h>
 #include <display.h>
 #include <set.h>
@@ -20,6 +21,9 @@
 //void power();
 //void settings();
 //void storage(unsigned int a, int b);
+
+unsigned int SetV1=0, SetV2=0, SetI1=0, SetI2=0, I1=0, I2=0, V1_50V=0, V2_50V=0, V1_15V=0, V2_15V=0;
+float voltage_pwm_coefficients[63][1][1]={{{0}}};
 
 void setup()
 {
@@ -101,6 +105,7 @@ void setup()
   PORTD&=~(1 << PORTD5);
   ADCSRA |= (1 << ADSC); //Inicia conversões do ADC
   sei(); //Habilita as interrupções globais
+  start(); //Executa a função de autostart
 }
 
 ISR(INT1_vect) //Interrupção INT1
@@ -181,14 +186,14 @@ void loop()
   {
     OCR1A = i;
     OCR1B = i;
-    delayMicroseconds(1000);
+    delayMicroseconds(10);
     if(i==4095)
     {
       for(i; i!=0; i--)
       {
         OCR1A = i;
         OCR1B = i;
-        delayMicroseconds(1000);
+        delayMicroseconds(10);
       }
     }
   }
