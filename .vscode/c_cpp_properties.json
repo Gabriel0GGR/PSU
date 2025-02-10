@@ -8,12 +8,12 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "G:/home/Gabriel/PSU/include",
-                "G:/home/Gabriel/PSU/src",
+                "C:/Users/gabri/PSU/include",
+                "C:/Users/gabri/PSU/src",
                 "C:/Users/gabri/.platformio/packages/framework-arduino-avr/cores/arduino",
                 "C:/Users/gabri/.platformio/packages/framework-arduino-avr/variants/standard",
-                "G:/home/Gabriel/PSU/.pio/libdeps/uno/Unity/src",
-                "G:/home/Gabriel/PSU/.pio/libdeps/uno/avr-debugger/avr8-stub",
+                "C:/Users/gabri/PSU/.pio/libdeps/uno/Unity/src",
+                "C:/Users/gabri/PSU/.pio/libdeps/uno/avr-debugger/avr8-stub",
                 "C:/Users/gabri/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                 "C:/Users/gabri/.platformio/packages/framework-arduino-avr/libraries/HID/src",
                 "C:/Users/gabri/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
@@ -24,12 +24,12 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "G:/home/Gabriel/PSU/include",
-                    "G:/home/Gabriel/PSU/src",
+                    "C:/Users/gabri/PSU/include",
+                    "C:/Users/gabri/PSU/src",
                     "C:/Users/gabri/.platformio/packages/framework-arduino-avr/cores/arduino",
                     "C:/Users/gabri/.platformio/packages/framework-arduino-avr/variants/standard",
-                    "G:/home/Gabriel/PSU/.pio/libdeps/uno/Unity/src",
-                    "G:/home/Gabriel/PSU/.pio/libdeps/uno/avr-debugger/avr8-stub",
+                    "C:/Users/gabri/PSU/.pio/libdeps/uno/Unity/src",
+                    "C:/Users/gabri/PSU/.pio/libdeps/uno/avr-debugger/avr8-stub",
                     "C:/Users/gabri/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                     "C:/Users/gabri/.platformio/packages/framework-arduino-avr/libraries/HID/src",
                     "C:/Users/gabri/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
